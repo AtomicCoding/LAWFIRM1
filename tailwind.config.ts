@@ -57,6 +57,23 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Law firm brand colors
+        brand: {
+          primary: "#6F2A38",
+          orange: "#F47525",
+          dark: "#1E1F2C",
+          "dark-alt": "#453F4E",
+          "gray-light": "#F3F3F3",
+          "text-dark": "#3F444B",
+          "text-primary": "#112337",
+          "text-secondary": "#585E6A",
+          "text-muted": "#999999",
+          "border-gray": "#686E77",
+        },
+      },
+      fontFamily: {
+        cinzel: ["Cinzel", "serif"],
+        inter: ["Inter", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
