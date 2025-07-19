@@ -5,6 +5,27 @@ import * as express from "express";
 const app = createServer();
 const port = process.env.PORT || 3000;
 
+// Add middleware to set proper MIME types
+app.use((req, res, next) => {
+  const ext = path.extname(req.url);
+  switch (ext) {
+    case ".js":
+    case ".mjs":
+      res.setHeader("Content-Type", "application/javascript; charset=utf-8");
+      break;
+    case ".css":
+      res.setHeader("Content-Type", "text/css; charset=utf-8");
+      break;
+    case ".json":
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      break;
+    case ".html":
+      res.setHeader("Content-Type", "text/html; charset=utf-8");
+      break;
+  }
+  next();
+});
+
 // In production, serve the built SPA files
 const __dirname = import.meta.dirname;
 const distPath = path.join(__dirname, "../spa");
